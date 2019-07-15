@@ -1,5 +1,7 @@
 import React from "react";
 
+import {withRouter} from "react-router-dom";
+
 import AddProjectStep0 from "../components/addproject/AddProjectStep0";
 import AddProjectStep1 from "../components/addproject/AddProjectStep1";
 import AddProjectStep2 from "../components/addproject/AddProjectStep2";
@@ -44,8 +46,7 @@ class AddProject extends React.Component {
   }
 
   submit() {
-    //this.props.addStory("SUBMIT", this.state.activeStep);
-    //return(<Redirect to="/Home" />);
+    this.props.history.push("/projects/" + this.state.projectId);
   }
 
   renderStep() {
@@ -55,9 +56,9 @@ class AddProject extends React.Component {
       case 1:
         return <AddProjectStep1 continueAction={this.continue} setProjectId={this.setProjectid} />;
       case 2:
-        return <AddProjectStep2 continueAction={this.continue} />;
+        return <AddProjectStep2 continueAction={this.continue} projectId={this.state.projectId} />;
       case 3:
-        return <AddProjectStep3 />;
+        return <AddProjectStep3 submitAction={this.submit} projectId={this.state.projectId}/>;
       default: break;
     }
   }
@@ -105,4 +106,4 @@ class AddProject extends React.Component {
   }
 }
 
-export default AddProject;
+export default withRouter(AddProject);

@@ -100,6 +100,11 @@ export interface NexusGenArgTypes {
       tagId?: string | null; // ID
     }
   }
+  Query: {
+    projects: { // args
+      id?: string | null; // String
+    }
+  }
 }
 
 export interface NexusGenAbstractResolveReturnTypes {

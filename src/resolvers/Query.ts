@@ -12,9 +12,15 @@ const Query = queryType({
 
     t.list.field('projects', {
       type: 'Project',
+      args: {
+        id: stringArg()
+      },
       resolve: (parent, args, ctx) => {
-        console.log("PROJECTS QUERY");
-        return ctx.prisma.projects()
+        if (args.id) {
+          return ctx.prisma.projects({where: {id: args.id}});
+        } else {
+          return ctx.prisma.projects(args);
+        }
       },
     })
 

@@ -1,11 +1,17 @@
 import React from "react";
 
+
+import {
+  Row,
+  Col
+} from "reactstrap";
+
 class Explore extends React.Component {
   render() {
     return(
-      <div>
-        Wicked charts
-      </div>
+      <Row>
+        <Col>Explore</Col>
+      </Row>
     );
   }
 }

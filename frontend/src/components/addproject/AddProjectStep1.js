@@ -14,7 +14,7 @@ import { Mutation } from "react-apollo";
 import CREATE_PROJECT from "../../gql/CREATE_PROJECT";
 
 
-class OnboardStep1 extends React.Component {
+class AddProjectStep1 extends React.Component {
   
   constructor(props) {
     super(props);
@@ -110,9 +110,9 @@ class OnboardStep1 extends React.Component {
   }
 }
 
-OnboardStep1.propTypes = {
+AddProjectStep1.propTypes = {
   continueAction: PropTypes.func,
   setProjectId: PropTypes.func
 }
 
-export default OnboardStep1;
+export default AddProjectStep1;

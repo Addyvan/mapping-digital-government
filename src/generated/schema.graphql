@@ -27,7 +27,7 @@ type Project {
 
 type Query {
   people: [Person!]
-  projects: [Project!]
+  projects(id: String): [Project!]
   tags: [Tag!]
 }
 

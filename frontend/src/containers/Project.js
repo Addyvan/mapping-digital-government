@@ -1,13 +1,21 @@
-    
 import React from "react";
+
+import {
+  Row,
+  Col
+} from "reactstrap";
+
+import ProjectOverview from "../components/project/ProjectOverview";
 
 class Project extends React.Component {
   render() {
-    console.log(this.props.location.pathname);
+    let id = this.props.location.pathname.split("/")[2];
     return(
-      <div>
-        PROJECT CONTAINER
-      </div>
+      <Row>
+        <Col>
+          <ProjectOverview id={id} />
+        </Col>
+      </Row>
     );
   }
 }
