@@ -2,6 +2,17 @@
 ### Do not make changes to this file directly
 
 
+type Count {
+  """Total number of people"""
+  people: Int
+
+  """Total number of projects"""
+  projects: Int
+
+  """Total number of tags"""
+  tags: Int
+}
+
 type Mutation {
   createPerson(gcId: Int, name: String): Person
   createProject(description: String, name: String): Project
@@ -26,9 +37,10 @@ type Project {
 }
 
 type Query {
-  people: [Person!]
+  counts(id: String): Count
+  people(id: String): [Person!]
   projects(id: String): [Project!]
-  tags: [Tag!]
+  tags(id: String): [Tag!]
 }
 
 type Tag {

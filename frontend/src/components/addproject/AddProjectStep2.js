@@ -12,6 +12,7 @@ import {
 
 import { Mutation, Query } from "react-apollo";
 import ADD_PEOPLE_TO_PROJECT from "../../gql/ADD_PEOPLE_TO_PROJECT";
+//import PEOPLE_IN_PROJECT from "../../gql/PEOPLE_IN_PROJECT";
 import PEOPLE from "../../gql/PEOPLE";
 import SmartInput from "./SmartInput";
 import buildIndex from "./buildIndex";
@@ -30,8 +31,6 @@ class AddProjectStep2 extends React.Component {
 
   onChange(e) {
 
-    console.log(e);
-
     this.setState({
       personId: e
     });
@@ -45,7 +44,11 @@ class AddProjectStep2 extends React.Component {
           (linkPersonProject, { data }) => {
 
             if (data) {
-              this.props.continueAction(2);
+              let person = {
+                id: data.linkPersonProject.id,
+                name: data.linkPersonProject.name
+              }
+              document.getElementById("people_id").innerHTML += " " + person.name + "<br></br>";
             }
 
             return(         
@@ -53,7 +56,10 @@ class AddProjectStep2 extends React.Component {
                 <Row>
                   <Col>
                     <Label htmlFor="phoneTest" style={{minWidth: "80%"}}>
-                      <span className="font-weight-bold">Person</span>
+                      <span className="font-weight-bold">People</span>
+                      
+                      <div id="people_id"></div>
+                              
                       <Query query={PEOPLE}>
                         {
                           ({ loading, error, data }) => {
@@ -70,7 +76,7 @@ class AddProjectStep2 extends React.Component {
                                     searchIndex={index}
                                     searchValues={searchValues}
                                     onChange={this.onChange}
-                                />
+                                  />
                                 );
                               } else {
                                 return (<div>ERROR: QUERY FAILED</div>);
@@ -80,13 +86,7 @@ class AddProjectStep2 extends React.Component {
                         }
                       </Query>
                     </Label>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md="9" />
-                  <Col md="3">
-                    <div className="float-right">
-                      <Button 
+                    <Button 
                         onClick={() => linkPersonProject(
                           { 
                             variables: {
@@ -95,6 +95,13 @@ class AddProjectStep2 extends React.Component {
                             }
                           })}
                       >Add Person To Project</Button>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md="9" />
+                  <Col md="3">
+                    <div className="float-right">
+                      <Button onClick={() => this.props.continueAction(2)}>Continue</Button>
                     </div>
                   </Col>
                 </Row>

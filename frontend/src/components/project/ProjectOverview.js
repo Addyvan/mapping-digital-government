@@ -5,7 +5,14 @@ import PROJECT_OVERVIEW from "../../gql/PROJECT_OVERVIEW";
 
 import { Spinner } from "reactstrap";
 
-import { Card, CardTitle, CardText } from 'reactstrap';
+import { 
+  Card, 
+  CardTitle, 
+  CardText,
+  Badge,
+  //Row,
+  //Col
+} from 'reactstrap';
 
 class ProjectOverview extends React.Component {
 
@@ -22,6 +29,19 @@ class ProjectOverview extends React.Component {
                 <Card body>
                   <CardTitle><h4>{data.projects[0].name}</h4></CardTitle>
                   <CardText>{data.projects[0].description}</CardText>
+                  <h4> People </h4>
+                  {
+                    data.projects[0].people.map((tag) => (
+                      <Badge href={"/people/" + tag.id} color="info">{tag.name}</Badge>
+                    ))
+                  }
+                  <h4>Tags</h4>
+                  {
+                    data.projects[0].tags.map((tag) => (
+                      <Badge href={"/tags/" + tag.id} color="primary">{tag.name}</Badge>
+                    ))
+                  }
+                  
                 </Card>
               )
             }

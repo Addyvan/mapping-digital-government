@@ -19,6 +19,11 @@ export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
+  Count: { // root type
+    people?: number | null; // Int
+    projects?: number | null; // Int
+    tags?: number | null; // Int
+  }
   Mutation: {};
   Person: { // root type
     gcId?: number | null; // Int
@@ -46,6 +51,11 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 }
 
 export interface NexusGenFieldTypes {
+  Count: { // field return type
+    people: number | null; // Int
+    projects: number | null; // Int
+    tags: number | null; // Int
+  }
   Mutation: { // field return type
     createPerson: NexusGenRootTypes['Person'] | null; // Person
     createProject: NexusGenRootTypes['Project'] | null; // Project
@@ -67,6 +77,7 @@ export interface NexusGenFieldTypes {
     tags: NexusGenRootTypes['Tag'][] | null; // [Tag!]
   }
   Query: { // field return type
+    counts: NexusGenRootTypes['Count'] | null; // Count
     people: NexusGenRootTypes['Person'][] | null; // [Person!]
     projects: NexusGenRootTypes['Project'][] | null; // [Project!]
     tags: NexusGenRootTypes['Tag'][] | null; // [Tag!]
@@ -101,7 +112,16 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
+    counts: { // args
+      id?: string | null; // String
+    }
+    people: { // args
+      id?: string | null; // String
+    }
     projects: { // args
+      id?: string | null; // String
+    }
+    tags: { // args
       id?: string | null; // String
     }
   }
@@ -112,7 +132,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Mutation" | "Person" | "Project" | "Query" | "Tag";
+export type NexusGenObjectNames = "Count" | "Mutation" | "Person" | "Project" | "Query" | "Tag";
 
 export type NexusGenInputNames = never;
 

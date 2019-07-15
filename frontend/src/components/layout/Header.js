@@ -31,6 +31,9 @@ class Header extends React.Component {
                   <NavbarToggler onClick={this.toggle} />
                   <Nav className="ml-auto" navbar>
                     <NavItem>
+                      <NavLink href="/explore">Explore</NavLink>
+                    </NavItem>
+                    <NavItem>
                       <NavLink href="/onboard">Add Project</NavLink>
                     </NavItem>
                     <NavItem>

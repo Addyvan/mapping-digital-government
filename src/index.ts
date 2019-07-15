@@ -10,6 +10,7 @@ import Mutation from "./resolvers/Mutation";
 import Person from "./schema/person";
 import Project from "./schema/project";
 import Tag from "./schema/tag";
+import Count from "./schema/count";
 
 const schema = makePrismaSchema({
   // Provide all the GraphQL types we've implemented
@@ -18,7 +19,8 @@ const schema = makePrismaSchema({
     Mutation,
     Person, 
     Project,
-    Tag
+    Tag,
+    Count
   ],
 
   // Configure the interface to Prisma

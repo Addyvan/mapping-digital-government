@@ -1,3 +1,15 @@
 .purpose-text {
-  font-size: 1.2em;
+  font-size: 1.1em;
+}
+
+.candlestick-example {
+  width: 100%;
+}
+
+.chart {
+  width: 100%;
+}
+
+.dashed-example-line {
+  stroke-dasharray: 2, 2;
 }

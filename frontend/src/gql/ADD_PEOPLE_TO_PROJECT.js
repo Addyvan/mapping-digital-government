@@ -4,6 +4,7 @@ const ADD_PEOPLE_TO_PROJECT = gql`
   mutation LinkPersonProject($projectId: ID!, $personId: ID!) {
     linkPersonProject(projectId: $projectId, personId: $personId) {
       id
+      name
     }
   }
 `;

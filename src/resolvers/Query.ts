@@ -5,8 +5,15 @@ const Query = queryType({
 
     t.list.field('people', {
       type: 'Person',
-      resolve: (parent, args, ctx, info) => {
-        return ctx.prisma.persons()
+      args: {
+        id: stringArg()
+      },
+      resolve: (parent, args : any, ctx, info) => {
+        if (args.id) {
+          return ctx.prisma.persons({where: {id: args.id}});
+        } else {
+          return ctx.prisma.persons(args);
+        }
       },
     })
 
@@ -15,7 +22,7 @@ const Query = queryType({
       args: {
         id: stringArg()
       },
-      resolve: (parent, args, ctx) => {
+      resolve: (parent, args : any, ctx) => {
         if (args.id) {
           return ctx.prisma.projects({where: {id: args.id}});
         } else {
@@ -26,11 +33,36 @@ const Query = queryType({
 
     t.list.field('tags', {
       type: 'Tag',
-      resolve: (parent, args, ctx) => {
-        return ctx.prisma.tags()
+      args: {
+        id: stringArg()
+      },
+      resolve: (parent, args : any, ctx) => {
+        if (args.id) {
+          return ctx.prisma.tags({where: {id: args.id}});
+        } else {
+          return ctx.prisma.tags(args);
+        }
       },
     })
 
+    t.field('counts', {
+      type: 'Count',
+      args: {
+        id: stringArg()
+      },
+      resolve: async (parent, args : any, ctx) => {
+        
+        const peopleCount : Number = await ctx.prisma.personsConnection().aggregate().count();
+        const projectsCount : Number = await ctx.prisma.projectsConnection().aggregate().count();
+        const tagsCount : Number = await ctx.prisma.tagsConnection().aggregate().count();
+        
+        return {
+          people: peopleCount,
+          projects: projectsCount,
+          tags: tagsCount
+        }
+      },
+    })
     /*
     t.list.field('filterProjects', {
       type: 'Post',

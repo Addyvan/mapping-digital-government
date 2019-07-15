@@ -7,7 +7,8 @@ import {
   Col,
   Button,
   Input,
-  Label
+  Label,
+  Alert
 } from "reactstrap";
 
 import { Mutation } from "react-apollo";
@@ -46,11 +47,23 @@ class AddProjectStep1 extends React.Component {
     return(
       <Mutation mutation={CREATE_PROJECT} >
         {
-          (CreateProject, { data }) => {
+          (CreateProject, { loading, error, data }) => {
 
             if (data) {
               this.props.setProjectId(data.createProject.id);
               this.props.continueAction(1);
+            }
+            let showError = false;
+            let errors = [];
+            if (error) {
+              if (error.graphQLErrors) {
+                showError = true;
+                error.graphQLErrors.map((e) => {
+                  errors.push({
+                    msg: e.message
+                  })
+                })
+              }
             }
 
             return(
@@ -68,6 +81,23 @@ class AddProjectStep1 extends React.Component {
                         onChange={(e) => {this.onChange(e, "name")}}
                       />
                     </Label>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    {
+                      (showError) ? 
+                        <>
+                          {
+                            errors.map((e) => (
+                              <Alert color="danger">
+                                {e.msg}
+                              </Alert> 
+                            ))
+                          }
+                        </>
+                        : ""
+                    }
                   </Col>
                 </Row>
                 <Row>

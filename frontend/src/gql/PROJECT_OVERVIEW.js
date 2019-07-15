@@ -10,6 +10,10 @@ const PROJECT_OVERVIEW = gql`
         id
         name
       }
+      tags {
+        id
+        name
+      }
     }
   }
 `;

@@ -32,28 +32,31 @@ class BilingualSearchObject {
 
   createSearchIndex(data) {
     var indexEN = [], indexFR = [];
-
+    console.log(data);
     for (var i = 0; i < data.length; i++) {
 
-      // Check for each row that the keys all exist. Throwing error because this borks the whole thing
-      if (! data[i][this.englishKey] ) {
-        throw new Error(`ERROR: English key: '${this.englishKey}' not valid for object ${i} in the data array provided for search`);
-      }
-      if (! data[i][this.frenchKey] ) {
-        throw new Error(`ERROR: French key: '${this.frenchKey}' not valid for object ${i} in the data array provided for search`);
-      }
-      if (! data[i][this.outputKey] ) {
-        throw new Error(`ERROR: Search Output key: '${this.outputKey}' not valid for object ${i} in the data array provided for search`);
-      }
+      if (data[i][this.englishKey] !== "") {
+        // Check for each row that the keys all exist. Throwing error because this borks the whole thing
+        if (! data[i][this.englishKey] ) {
+          throw new Error(`ERROR: English key: '${this.englishKey}' not valid for object ${i} in the data array provided for search`);
+        }
+        if (! data[i][this.frenchKey] ) {
+          throw new Error(`ERROR: French key: '${this.frenchKey}' not valid for object ${i} in the data array provided for search`);
+        }
+        if (! data[i][this.outputKey] ) {
+          throw new Error(`ERROR: Search Output key: '${this.outputKey}' not valid for object ${i} in the data array provided for search`);
+        }
 
-      indexEN.push({
-        name: data[i][this.englishKey],
-        path: data[i][this.outputKey]
-      });
-      indexFR.push({
-        name: data[i][this.frenchKey],
-        path: data[i][this.outputKey]
-      });
+        indexEN.push({
+          name: data[i][this.englishKey],
+          path: data[i][this.outputKey]
+        });
+        indexFR.push({
+          name: data[i][this.frenchKey],
+          path: data[i][this.outputKey]
+        });
+      }
+      
 
     }
 

@@ -51,7 +51,7 @@ class AddProjectStep3 extends React.Component {
                 <Row>
                   <Col>
                     <Label htmlFor="phoneTest" style={{minWidth: "80%"}}>
-                      <span className="font-weight-bold">Person</span>
+                      <span className="font-weight-bold">Tags</span>
                       <Query query={TAGS}>
                         {
                           ({ loading, error, data }) => {
