@@ -55,7 +55,21 @@ const schema = makePrismaSchema({
 
 const server = new ApolloServer({
   schema,
-  context: { prisma },
+  /*
+  engine: {
+    apiKey: config.engine.apiID,
+  },
+  tracing: config.app.tracing,
+  cors: {
+    origin: "*"
+  },*/
+  context: async (req) => ({
+    ...req,
+    prisma: prisma,
+    /*
+    token: await introspect.verifyToken(req),
+    defaults: await getDefaults()*/
+  })
 })
 
 server.listen({ port: 4000 }, () =>
