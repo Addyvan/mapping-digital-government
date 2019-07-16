@@ -1,44 +1,53 @@
-// Layout Types
+// Layouts
 import DefaultLayout from "./layouts/Default";
+import MappingDigitalGovLayout from "./layouts/MappingDigitalGovLayout";
 
-// Route Views
-import Home from "./containers/Home";
-import AddProject from "./containers/AddProject";
-import Project from "./containers/Project";
-import Tag from "./containers/Tag";
-import Person from "./containers/Person";
-import Explore from "./containers/Explore";
+// Reporting Views
+import Overview from "./containers/reporting/Overview";
+
+// Mapping Digital Gov Views
+import Home from "./containers/mapping/Home";
+import AddProject from "./containers/mapping/AddProject";
+import Project from "./containers/mapping/Project";
+import Tag from "./containers/mapping/Tag";
+import Person from "./containers/mapping/Person";
+import Explore from "./containers/mapping/Explore";
 
 export default [
   {
     path: "/",
-    exact: true,
     layout: DefaultLayout,
+    exact: true,
+    component: Overview
+  },
+  {
+    path: "/mapping-digital-gov/",
+    layout: MappingDigitalGovLayout,
     component: Home
   },
   {
-    path: "/explore",
-    layout: DefaultLayout,
+    path: "/mapping-digital-gov/explore",
+    layout: MappingDigitalGovLayout,
     component: Explore
   },
   {
-    path: "/onboard",
-    layout: DefaultLayout,
+    path: "/mapping-digital-gov/add-project",
+    layout: MappingDigitalGovLayout,
     component: AddProject
   },
   {
-    path: "/projects/:id",
-    layout: DefaultLayout,
+    path: "/mapping-digital-gov/projects/:id",
+    layout: MappingDigitalGovLayout,
     component: Project
   },
   {
-    path: "/tags/:id",
-    layout: DefaultLayout,
+    path: "/mapping-digital-gov/tags/:id",
+    layout: MappingDigitalGovLayout,
     component: Tag
   },
   {
-    path: "/people/:id",
-    layout: DefaultLayout,
+    path: "/mapping-digital-dov/people/:id",
+    layout: MappingDigitalGovLayout,
     component: Person
   },
 ];

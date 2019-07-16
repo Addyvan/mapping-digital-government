@@ -5,7 +5,7 @@ import {
   Col
 } from "reactstrap";
 
-import Example from "../components/viz/Example";
+import Example from "../../components/viz/Example";
 
 import { SizeMe } from 'react-sizeme';
 

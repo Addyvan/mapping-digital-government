@@ -2,10 +2,10 @@ import React from "react";
 
 import {withRouter} from "react-router-dom";
 
-import AddProjectStep0 from "../components/addproject/AddProjectStep0";
-import AddProjectStep1 from "../components/addproject/AddProjectStep1";
-import AddProjectStep2 from "../components/addproject/AddProjectStep2";
-import AddProjectStep3 from "../components/addproject/AddProjectStep3";
+import AddProjectStep0 from "../../components/addproject/AddProjectStep0";
+import AddProjectStep1 from "../../components/addproject/AddProjectStep1";
+import AddProjectStep2 from "../../components/addproject/AddProjectStep2";
+import AddProjectStep3 from "../../components/addproject/AddProjectStep3";
 
 import {
   Row,

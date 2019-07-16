@@ -32,7 +32,7 @@ class BilingualSearchObject {
 
   createSearchIndex(data) {
     var indexEN = [], indexFR = [];
-    console.log(data);
+    //console.log(data);
     for (var i = 0; i < data.length; i++) {
 
       if (data[i][this.englishKey] !== "") {

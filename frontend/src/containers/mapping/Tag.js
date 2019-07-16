@@ -5,19 +5,19 @@ import {
   Col
 } from "reactstrap";
 
-import ProjectOverview from "../components/project/ProjectOverview";
+import TagOverview from "../../components/tags/TagOverview";
 
-class Project extends React.Component {
+class Tag extends React.Component {
   render() {
     let id = this.props.location.pathname.split("/")[2];
     return(
       <Row>
         <Col>
-          <ProjectOverview id={id} />
+          <TagOverview id={id} />
         </Col>
       </Row>
     );
   }
 }
 
-export default Project;
+export default Tag;

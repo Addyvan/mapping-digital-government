@@ -13,3 +13,7 @@
 .dashed-example-line {
   stroke-dasharray: 2, 2;
 }
+
+body {
+  padding-top: 0px !important;
+}

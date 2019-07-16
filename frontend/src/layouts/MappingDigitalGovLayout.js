@@ -6,6 +6,7 @@ import {
   Col
 } from "reactstrap";
 import Sidebar from "../components/layouts/Sidebar";
+import Header from "../components/layouts/mapping/Header";
 
 const DefaultLayout = ({ children }) => (
   <Container fluid>
@@ -24,8 +25,9 @@ const DefaultLayout = ({ children }) => (
           md="9"
           sm="12"
           className="flex-grow-1 content right"
-          style={{paddingTop: "25px"}}
+          style={{paddingTop: "10px"}}
         >
+        <Header />
         {children}
       </Col>
     </Row>

@@ -28,7 +28,3 @@ services:
       POSTGRES_PASSWORD: prisma
     volumes:
       - ./var/lib/postgresql/data
-
-volumes:
-  rabbitmq_data:
-    driver: local

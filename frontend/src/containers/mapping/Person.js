@@ -5,19 +5,19 @@ import {
   Col
 } from "reactstrap";
 
-import TagOverview from "../components/tags/TagOverview";
+import PersonOverview from "../../components/people/PersonOverview";
 
-class Tag extends React.Component {
+class Person extends React.Component {
   render() {
     let id = this.props.location.pathname.split("/")[2];
     return(
       <Row>
         <Col>
-          <TagOverview id={id} />
+          <PersonOverview id={id} />
         </Col>
       </Row>
     );
   }
 }
 
-export default Tag;
+export default Person;

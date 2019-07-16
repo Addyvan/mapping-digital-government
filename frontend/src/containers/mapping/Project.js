@@ -5,19 +5,19 @@ import {
   Col
 } from "reactstrap";
 
-import PersonOverview from "../components/people/PersonOverview";
+import ProjectOverview from "../../components/project/ProjectOverview";
 
-class Person extends React.Component {
+class Project extends React.Component {
   render() {
     let id = this.props.location.pathname.split("/")[2];
     return(
       <Row>
         <Col>
-          <PersonOverview id={id} />
+          <ProjectOverview id={id} />
         </Col>
       </Row>
     );
   }
 }
 
-export default Person;
+export default Project;

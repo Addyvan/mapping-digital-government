@@ -7,8 +7,8 @@ import {
   Button
 } from 'reactstrap';
 
-import HomeSearch from "../components/home/HomeSearch";
-import HomeTotals from "../components/home/HomeTotals";
+import HomeSearch from "../../components/home/HomeSearch";
+import HomeTotals from "../../components/home/HomeTotals";
 
 class Home extends React.Component {
   render() {

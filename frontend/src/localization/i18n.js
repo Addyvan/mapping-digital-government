@@ -4,14 +4,14 @@ import frTranslation from './locales/fr/translation';
 
 i18n
   .init({
-    lng: "en", 
-    fallbackLng: 'en',
+    lng: "en_CA", 
+    fallbackLng: 'en_CA',
     debug: true,
     resources: {
-      en: {
+      en_CA: {
         translation: enTranslation
       },
-      fr: {
+      fr_CA: {
         translation: frTranslation
       }
     },
