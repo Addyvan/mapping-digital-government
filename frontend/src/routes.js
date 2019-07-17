@@ -3,10 +3,10 @@ import DefaultLayout from "./layouts/Default";
 import MappingDigitalGovLayout from "./layouts/MappingDigitalGovLayout";
 
 // Reporting Views
-import Overview from "./containers/reporting/Overview";
+import ReportingOverview from "./containers/reporting/Overview";
 
 // Mapping Digital Gov Views
-import Home from "./containers/mapping/Home";
+import MappingHome from "./containers/mapping/Home";
 import AddProject from "./containers/mapping/AddProject";
 import Project from "./containers/mapping/Project";
 import Tag from "./containers/mapping/Tag";
@@ -18,12 +18,13 @@ export default [
     path: "/",
     layout: DefaultLayout,
     exact: true,
-    component: Overview
+    component: ReportingOverview
   },
   {
     path: "/mapping-digital-gov/",
     layout: MappingDigitalGovLayout,
-    component: Home
+    exact: true,
+    component: MappingHome
   },
   {
     path: "/mapping-digital-gov/explore",

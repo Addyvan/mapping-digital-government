@@ -84,7 +84,7 @@ class SearchBar extends React.Component {
               }
             </span>
             {this.state.results.map(result =>
-              <DropdownItem key={result.ref} href={"/projects/" + result.ref}>
+              <DropdownItem key={result.ref} href={"/mapping-digital-gov/projects/" + result.ref}>
                 {this.props.searchReturnValues[result.ref]}
               </DropdownItem>
             )}

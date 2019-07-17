@@ -25,25 +25,27 @@ class ProjectOverview extends React.Component {
             if (error) { console.log(error); return; }
 
             if (data) {
-              return (
-                <Card body>
-                  <CardTitle><h4>{data.projects[0].name}</h4></CardTitle>
-                  <CardText>{data.projects[0].description}</CardText>
-                  <h4> People </h4>
-                  {
-                    data.projects[0].people.map((tag) => (
-                      <Badge href={"/people/" + tag.id} color="info">{tag.name}</Badge>
-                    ))
-                  }
-                  <h4>Tags</h4>
-                  {
-                    data.projects[0].tags.map((tag) => (
-                      <Badge href={"/tags/" + tag.id} color="primary">{tag.name}</Badge>
-                    ))
-                  }
-                  
-                </Card>
-              )
+              if (data.projects.length > 0) {
+                return (
+                  <Card body>
+                    <CardTitle><h4>{data.projects[0].name}</h4></CardTitle>
+                    <CardText>{data.projects[0].description}</CardText>
+                    <h4> People </h4>
+                    {
+                      data.projects[0].people.map((tag) => (
+                        <Badge href={"/people/" + tag.id} color="info">{tag.name}</Badge>
+                      ))
+                    }
+                    <h4>Tags</h4>
+                    {
+                      data.projects[0].tags.map((tag) => (
+                        <Badge href={"/tags/" + tag.id} color="primary">{tag.name}</Badge>
+                      ))
+                    }
+                    
+                  </Card>
+                );
+              }
             }
           }
         }
