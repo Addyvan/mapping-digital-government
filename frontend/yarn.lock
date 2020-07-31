@@ -896,10 +896,6 @@
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@gctools-components/aurora-css/-/aurora-css-0.3.3.tgz#23b7d0bdfddd4123122b30b1f10f7d9999bdfc00"
 
-"@gctools-components/aurora-ds@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@gctools-components/aurora-ds/-/aurora-ds-0.3.3.tgz#ddd86e9451eaddb49e411c0c4267d537fa45cc99"
-
 "@gctools-components/gc-login@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@gctools-components/gc-login/-/gc-login-1.1.3.tgz#51142ea85f9a2851ad6a037297f3985064d87b5e"
@@ -2231,8 +2227,8 @@ bluebird@^3.5.5:
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
 
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.11.6, bn.js@^4.4.0:
-  version "4.11.8"
-  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
+  version "4.11.9"
+  resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.9.tgz#26d556829458f9d1e81fc48952493d0ba3507828"
 
 body-parser@1.19.0:
   version "1.19.0"
@@ -4084,8 +4080,8 @@ elementary-circuits-directed-graph@^1.0.4:
     strongly-connected-components "^1.0.1"
 
 elliptic@^6.0.0:
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.0.tgz#2b8ed4c891b7de3200e14412a5b8248c7af505ca"
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.3.tgz#cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6"
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
